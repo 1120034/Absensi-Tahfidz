@@ -121,10 +121,10 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
+      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-slate-100 overflow-hidden my-auto max-h-[92vh] flex flex-col animate-in fade-in zoom-in duration-200">
         {/* Header */}
-        <div className="bg-emerald-900 px-6 py-4 text-white flex items-center justify-between">
+        <div className="bg-emerald-900 px-6 py-4 text-white flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2.5">
             <div className="p-2 rounded-xl bg-emerald-700/50">
               <FileSpreadsheet className="w-5 h-5 text-emerald-300" />
@@ -136,13 +136,13 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
               </p>
             </div>
           </div>
-          <button onClick={onClose} className="text-white/70 hover:text-white p-1 rounded-lg">
+          <button onClick={onClose} className="text-white/70 hover:text-white p-1 rounded-lg cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-5">
+        <div className="p-6 space-y-5 overflow-y-auto flex-1">
           {/* Status Box */}
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
             <div className="flex items-start justify-between">

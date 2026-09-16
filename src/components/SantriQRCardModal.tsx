@@ -47,10 +47,10 @@ export const SantriQRCardModal: React.FC<SantriQRCardModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-      <div className="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-xs overflow-y-auto">
+      <div className="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200 my-auto max-h-[92vh] flex flex-col">
         {/* Modal Header */}
-        <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+        <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/80 shrink-0">
           <div className="flex items-center gap-2.5">
             <div className="p-2 rounded-xl bg-emerald-100 text-emerald-800">
               <QrCode className="w-5 h-5" />
@@ -70,7 +70,7 @@ export const SantriQRCardModal: React.FC<SantriQRCardModalProps> = ({
         </div>
 
         {/* Printable Card Container */}
-        <div className="p-6 flex flex-col items-center">
+        <div className="p-4 sm:p-6 flex flex-col items-center overflow-y-auto flex-1">
           <div
             ref={cardRef}
             className="w-full bg-gradient-to-b from-emerald-800 via-teal-900 to-slate-900 text-white rounded-2xl p-5 shadow-lg border border-emerald-700/50 flex flex-col items-center text-center relative overflow-hidden"

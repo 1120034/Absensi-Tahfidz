@@ -53,30 +53,31 @@ export const RaporModal: React.FC<RaporModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-6 animate-in fade-in zoom-in duration-200 print:m-0 print:border-none print:shadow-none print:w-full">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
+      <div className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-auto max-h-[92vh] flex flex-col animate-in fade-in zoom-in duration-200 print:m-0 print:border-none print:shadow-none print:w-full print:max-h-none print:overflow-visible">
         {/* Top Action Bar (hidden on print) */}
-        <div className="no-print bg-slate-900 text-white px-6 py-3 flex items-center justify-between">
+        <div className="no-print bg-slate-900 text-white px-4 sm:px-6 py-3 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2">
             <Award className="w-5 h-5 text-emerald-400" />
-            <span className="font-semibold text-sm">Pratinjau Rapor Mutaba'ah Tahfidz</span>
+            <span className="font-semibold text-xs sm:text-sm">Pratinjau Rapor Mutaba'ah Tahfidz</span>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
-              Cetak / Simpan PDF
+              <span className="hidden sm:inline">Cetak / Simpan PDF</span>
+              <span className="sm:hidden">Cetak</span>
             </button>
-            <button onClick={onClose} className="p-1.5 text-slate-400 hover:text-white rounded-lg">
+            <button onClick={onClose} className="p-1.5 text-slate-400 hover:text-white rounded-lg cursor-pointer">
               <X className="w-5 h-5" />
             </button>
           </div>
         </div>
 
         {/* Printable Document Area */}
-        <div className="p-8 sm:p-10 space-y-6 text-slate-800 bg-white">
+        <div className="p-6 sm:p-10 space-y-6 text-slate-800 bg-white overflow-y-auto flex-1 print:overflow-visible print:p-0">
           {/* Header Lembaga */}
           <div className="text-center border-b-2 border-emerald-900 pb-5">
             <h1 className="font-arabic text-3xl text-emerald-900 font-bold mb-1">
