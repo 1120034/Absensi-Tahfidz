@@ -1,0 +1,10 @@
+{
+  "name": "Jurnal Tahfidz Santri 0.0.1",
+  "description": "Manajemen hafalan santri terintegrasi dengan laporan perkembangan real-time untuk ustadz dan wali santri.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
