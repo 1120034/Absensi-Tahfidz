@@ -4,8 +4,12 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  // Automatically configure subpath base for GitHub Pages deployment
+  const githubRepo = process.env.GITHUB_REPOSITORY;
+  const base = githubRepo ? `/${githubRepo.split('/')[1]}/` : './';
+
   return {
-    base: './',
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
